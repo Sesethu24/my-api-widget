@@ -11,11 +11,21 @@ axios.get('https://api-tutor.herokuapp.com/v1/colors')
         })
  });
 
- axios.get('https://api-tutor.herokuapp.com/v1/cars')
+ axios.get('https://api-tutor.herokuapp.com/v1/makes')
 
  .then(function(response){
     console.log(response.data);
     const makesElem = document.querySelector(".makes")
+    makesElem.innerHTML = makesTemplate({
+        makes: response.data
+    })
+ });
+
+ axios.get('https://api-tutor.herokuapp.com/v1/cars')
+
+ .then(function(response){
+    console.log(response.data);
+    const makesElem = document.querySelector(".models")
     makesElem.innerHTML = makesTemplate({
         makes: response.data
     })
