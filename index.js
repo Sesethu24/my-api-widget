@@ -11,11 +11,11 @@ axios.get('http://api-tutor.herokuapp.com/v1/colors')
         })
  });
 
- axios.get('http://api-tutor.herokuapp.com/v1/makes')
+ axios.get('http://api-tutor.herokuapp.com/v1/cars')
 
  .then(function(response){
     console.log(response.data);
-    const makesElem = document.querySelector(".brands")
+    const makesElem = document.querySelector(".makes")
     makesElem.innerHTML = makesTemplate({
         makes: response.data
     })

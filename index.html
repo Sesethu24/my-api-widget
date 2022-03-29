@@ -1,16 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" ></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="style.css">
+
+	<script type="text/x-template" class="makesTemplate">
+
+	{{#each makes}}
+    <li class="theList">
+      {{this}}</li>
+    {{/each}}
+	</script>
 </head>
+
 <body>
-    <h1>Cars Widget</h1>
+
+	<h1>Car info</h1>
+
+	<h2>Colors</h2>
+	<div class="colors" >
+    <h3>Models</h3>
+	<div class="makes">
+
+	</div>
+
+ <h2>Cars</h2>
+
+	</div>
 </body>
 <script src="index.js"></script>
-</html>
+</html> 
