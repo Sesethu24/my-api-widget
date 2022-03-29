@@ -1,7 +1,7 @@
 const makesTemplateSource = document.querySelector(".makesTemplate")
 const makesTemplate = Handlebars.compile(makesTemplateSource.innerHTML)
 
-axios.get('http://api-tutor.herokuapp.com/v1/colors')
+axios.get('https://api-tutor.herokuapp.com/v1/colors')
 
 .then(function(response){
         console.log(response.data);
@@ -11,7 +11,7 @@ axios.get('http://api-tutor.herokuapp.com/v1/colors')
         })
  });
 
- axios.get('http://api-tutor.herokuapp.com/v1/cars')
+ axios.get('https://api-tutor.herokuapp.com/v1/cars')
 
  .then(function(response){
     console.log(response.data);
