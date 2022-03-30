@@ -1,5 +1,6 @@
 const makesTemplateSource = document.querySelector(".makesTemplate")
 const makesTemplate = Handlebars.compile(makesTemplateSource.innerHTML)
+const carsElem = document.querySelector('.model');
 
 axios.get('https://api-tutor.herokuapp.com/v1/colors')
 
@@ -22,11 +23,15 @@ axios.get('https://api-tutor.herokuapp.com/v1/colors')
  });
 
  axios.get('https://api-tutor.herokuapp.com/v1/cars')
-
+ 
  .then(function(response){
-    console.log(response.data);
-    const makesElem = document.querySelector(".models")
-    makesElem.innerHTML = makesTemplate({
-        makes: response.data
-    })
+     
+    response.data.forEach((model,index )=> {
+        if (index<30) {
+           const list = document.createElement('li') 
+           list.innerHTML =`<li>${model.make}</li>`
+           carsElem.appendChild(list);
+        }
+    });
+    
  });
