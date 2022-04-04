@@ -1,6 +1,6 @@
 const makesTemplateSource = document.querySelector(".makesTemplate")
 const makesTemplate = Handlebars.compile(makesTemplateSource.innerHTML)
-const carsElem = document.querySelector('.model');
+const carsElem = document.querySelector('.myCars');
 
 const colorElem = document.querySelector(".selectColor");
 const brandElem = document.querySelector(".selectBrand");
@@ -54,10 +54,38 @@ axios.get('https://api-tutor.herokuapp.com/v1/colors')
  .then(function(response){
      
     response.data.forEach((model,index )=> {
+        console.log(model);
         if (index<30) {
-           const list = document.createElement('li') 
-           list.innerHTML =`<li>${model.make}</li>`
-           carsElem.appendChild(list);
+           const list = document.createElement('tr') 
+
+           const td = document.createElement('td');
+           const myList = document.createTextNode(`${model.make}`) 
+           list.appendChild(td);
+           list.appendChild(td);
+           td.appendChild(myList)
+           //
+           const tColor = document.createElement('td');
+           const myColor = document.createTextNode(`${model.color}`) 
+           tColor.appendChild(myColor)
+           list.appendChild(tColor)
+           carsElem.appendChild(list)
+
+           //
+           const tPrice = document.createElement('td');
+           const myPrice = document.createTextNode(`${model.price}`) 
+           tPrice.appendChild(myPrice)
+           list.appendChild(tPrice)
+
+           //
+           const tModel = document.createElement('td');
+           const myModel = document.createTextNode(`${model.model}`) 
+           tModel.appendChild(myModel)
+           list.appendChild(tModel)
+          // 
+          const tReg = document.createElement('td');
+           const myReg = document.createTextNode(`${model.reg_number}`) 
+           tReg.appendChild(myReg)
+           list.appendChild(tReg)
         }
     });
     

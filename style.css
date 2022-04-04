@@ -1,5 +1,6 @@
-body{
+ body{
     background-color: rgb(204, 50, 88);
+    position: fixed;
 }
 h1{
   padding-left: 25em;   
@@ -41,6 +42,25 @@ select {
   .container{
       background-color: aqua;
   }
-  td{
+  /* td{
       align-items: top;
+      border-style: solid;
+  } */
+  .tableHead{
+    
+      border-style: solid;
+  } 
+  .myCars {
+    /* text-align: center; */
+    color: blue;
+  }
+  .table-dark {
+    --bs-table-bg: #212529;
+    --bs-table-striped-bg: #2c3034;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #373b3e;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #323539;
+    --bs-table-hover-color: #fff;
+    color: #0a58ca;
   }
